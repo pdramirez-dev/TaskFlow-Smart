@@ -13,26 +13,26 @@ export default function CTA() {
               Built for iPhone
             </p>
             <h2 className="section-title mt-4 text-4xl font-bold sm:text-5xl">
-              Replace the messy to-do list with a cleaner daily flow
+              Present the real product, not placeholder marketing blocks
             </h2>
             <p className="mt-5 text-base leading-8 text-slate-300">
-              TaskFlow Smart is positioned as a polished productivity app with clear support and
-              privacy routes, ready to publish as a static site on GitHub Pages.
+              The landing now routes users to working internal pages and shows the actual app
+              screens you added, which makes the site feel closer to a real launch page.
             </p>
           </div>
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <a
-              href="https://apps.apple.com/"
+              href={withBasePath("/#screenshots")}
               className="rounded-full bg-white px-6 py-4 text-center text-sm font-semibold text-slate-950 transition hover:bg-brand-100"
             >
-              Open App Store
+              Browse screenshots
             </a>
             <a
-              href={withBasePath("/privacy")}
+              href={withBasePath("/support")}
               className="rounded-full border border-white/15 px-6 py-4 text-center text-sm font-semibold text-white transition hover:border-brand-300 hover:text-brand-200"
             >
-              Review privacy policy
+              Contact support
             </a>
           </div>
         </div>

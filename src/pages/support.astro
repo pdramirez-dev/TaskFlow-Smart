@@ -1,66 +1,142 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { withBasePath } from "../lib/paths";
+
+const supportTopics = [
+  {
+    title: "Bug reports",
+    description: "Tell us what happened, what you expected and whether the issue happens every time."
+  },
+  {
+    title: "Account or billing",
+    description: "Include the Apple ID purchase context or subscription issue so we can reply faster."
+  },
+  {
+    title: "Feature feedback",
+    description: "Share the workflow you are trying to improve and where the app currently gets in your way."
+  }
+];
+
+const faqItems = [
+  {
+    title: "How fast do you reply?",
+    answer: "We aim to respond within 2 business days. Critical blocking issues are prioritized first."
+  },
+  {
+    title: "What should I include in my email?",
+    answer:
+      "Your device model, iOS version, a short issue summary, screenshots if helpful and clear reproduction steps."
+  },
+  {
+    title: "Where can I read the privacy details?",
+    answer: "Use the privacy policy page for data handling details and privacy-related contact information."
+  }
+];
 ---
 
 <BaseLayout
   title="Support | TaskFlow Smart"
-  description="Support page for TaskFlow Smart."
+  description="Contact support for TaskFlow Smart, report bugs and review help information."
   path="/support"
 >
   <section class="py-14 sm:py-20">
-    <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-      <div class="glass-panel rounded-[2.5rem] p-8 sm:p-12">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">Support</p>
-        <h1 class="section-title mt-4 text-4xl font-bold text-slate-950 sm:text-5xl">
-          Need help with TaskFlow Smart?
+    <div class="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
+      <div class="glass-panel overflow-hidden rounded-[2.5rem] p-8 sm:p-12">
+        <div class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-sm font-medium text-brand-800">
+          <span class="h-2 w-2 rounded-full bg-brand-500"></span>
+          Support center
+        </div>
+
+        <h1 class="section-title mt-6 max-w-3xl text-4xl font-bold text-slate-950 sm:text-5xl">
+          Support for TaskFlow Smart
         </h1>
         <p class="mt-5 max-w-2xl text-base leading-8 text-slate-600">
-          Use the contact details below for bug reports, account questions, billing issues or
-          general product feedback.
+          Contact us for product questions, issue reports and account-related help. This page is
+          meant to work as the public support URL for the app listing.
         </p>
 
-        <div class="mt-10 space-y-6 text-base leading-8 text-slate-600">
-          <div>
-            <h2 class="font-display text-2xl font-bold text-slate-950">Contact</h2>
-            <p class="mt-3">
-              Email:
-              <a class="font-semibold text-brand-700" href="mailto:support@taskflowsmart.app">
-                {" "}support@taskflowsmart.app
-              </a>
+        <div class="mt-8 grid gap-4 lg:grid-cols-2">
+          <a
+            class="flex h-full flex-col rounded-[1.75rem] bg-slate-950 p-6 text-white transition hover:bg-brand-700"
+            href="mailto:pauldiaz.dev@icloud.com?subject=TaskFlow%20Smart%20Support"
+          >
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Email</p>
+            <p class="mt-3 break-all font-display text-lg font-bold leading-7 sm:text-xl">
+              pauldiaz.dev@icloud.com
+            </p>
+            <p class="mt-3 text-xs leading-6 text-slate-300 sm:text-sm">
+              Best for bug reports, account issues and product questions.
+            </p>
+          </a>
+
+          <div class="flex h-full flex-col rounded-[1.75rem] border border-slate-200 bg-white/75 p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-brand-700">Response time</p>
+            <p class="mt-3 font-display text-xl font-bold text-slate-950 sm:text-2xl">
+              Within 2 business days
+            </p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Include screenshots and device details when the issue is reproducible.
             </p>
           </div>
+        </div>
 
-          <div>
-            <h2 class="font-display text-2xl font-bold text-slate-950">Response time</h2>
-            <p class="mt-3">We aim to respond to support requests within 2 business days.</p>
-          </div>
-
-          <div>
-            <h2 class="font-display text-2xl font-bold text-slate-950">Include in your request</h2>
-            <p class="mt-3">
-              Please include your device model, iOS version, a short description of the issue and
-              reproduction steps when relevant.
-            </p>
+        <div class="mt-10">
+          <h2 class="font-display text-2xl font-bold text-slate-950">What we can help with</h2>
+          <div class="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {
+              supportTopics.map((topic) => (
+                <article class="flex h-full flex-col rounded-[1.6rem] border border-slate-200 bg-white/70 p-5">
+                  <h3 class="font-display text-xl font-bold text-slate-950">{topic.title}</h3>
+                  <p class="mt-2 text-sm leading-7 text-slate-600">{topic.description}</p>
+                </article>
+              ))
+            }
           </div>
         </div>
       </div>
 
-      <aside class="glass-panel rounded-[2.5rem] p-8 sm:p-10">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">Quick links</p>
-        <div class="mt-6 space-y-4">
-          <a class="block rounded-2xl border border-slate-200 bg-white/80 p-5 transition hover:border-brand-300" href={withBasePath("/")}>
-            <span class="block font-display text-xl font-bold text-slate-950">Marketing page</span>
-            <span class="mt-2 block text-sm leading-7 text-slate-600">
-              Review the landing page and product overview.
-            </span>
-          </a>
-          <a class="block rounded-2xl border border-slate-200 bg-white/80 p-5 transition hover:border-brand-300" href={withBasePath("/privacy")}>
-            <span class="block font-display text-xl font-bold text-slate-950">Privacy policy</span>
-            <span class="mt-2 block text-sm leading-7 text-slate-600">
-              Read how TaskFlow Smart handles privacy-related information.
-            </span>
-          </a>
+      <aside class="space-y-6">
+        <div class="glass-panel rounded-[2.5rem] p-8 sm:p-10">
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">Before emailing</p>
+          <h2 class="section-title mt-4 text-3xl font-bold text-slate-950">Include useful context</h2>
+          <ul class="mt-6 space-y-3 text-sm leading-7 text-slate-600">
+            <li class="rounded-2xl bg-white/70 px-4 py-3">Device model and iOS version</li>
+            <li class="rounded-2xl bg-white/70 px-4 py-3">What you expected to happen</li>
+            <li class="rounded-2xl bg-white/70 px-4 py-3">What actually happened</li>
+            <li class="rounded-2xl bg-white/70 px-4 py-3">Steps to reproduce the issue</li>
+          </ul>
+        </div>
+
+        <div class="glass-panel rounded-[2.5rem] p-8 sm:p-10">
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">Quick links</p>
+          <div class="mt-6 space-y-4">
+            <a class="block rounded-2xl border border-slate-200 bg-white/80 p-5 transition hover:border-brand-300" href={withBasePath("/")}>
+              <span class="block font-display text-xl font-bold text-slate-950">Back to landing page</span>
+              <span class="mt-2 block text-sm leading-7 text-slate-600">
+                Review the product overview and screenshots.
+              </span>
+            </a>
+            <a class="block rounded-2xl border border-slate-200 bg-white/80 p-5 transition hover:border-brand-300" href={withBasePath("/privacy")}>
+              <span class="block font-display text-xl font-bold text-slate-950">Privacy policy</span>
+              <span class="mt-2 block text-sm leading-7 text-slate-600">
+                Read how TaskFlow Smart handles support and diagnostic data.
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="glass-panel rounded-[2.5rem] p-8 sm:p-10">
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">FAQ</p>
+          <div class="mt-6 space-y-5">
+            {
+              faqItems.map((item) => (
+                <section class="rounded-[1.6rem] border border-slate-200 bg-white/70 p-5">
+                  <h3 class="font-display text-xl font-bold text-slate-950">{item.title}</h3>
+                  <p class="mt-2 text-sm leading-7 text-slate-600">{item.answer}</p>
+                </section>
+              ))
+            }
+          </div>
         </div>
       </aside>
     </div>

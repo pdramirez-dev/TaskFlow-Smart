@@ -1,10 +1,14 @@
 import { withBasePath } from "../lib/paths";
+import { screenshots } from "../lib/screenshots";
+import PhoneScreenshot from "./PhoneScreenshot";
 
 const highlights = [
   "AI-assisted task prioritization",
   "Fast iPhone-first task capture",
   "Planner UI designed for focus"
 ];
+
+const heroShots = screenshots.slice(0, 3);
 
 export default function Hero() {
   return (
@@ -13,7 +17,7 @@ export default function Hero() {
       <div className="hero-orb right-[-2rem] top-28 h-64 w-64 bg-emerald-200" />
 
       <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-        <div className="relative">
+        <div className="relative rounded-[2.25rem] px-2 py-4 sm:px-4 lg:px-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-sm font-medium text-brand-800">
             <span className="h-2 w-2 rounded-full bg-brand-500" />
             Organize your day with AI
@@ -32,10 +36,10 @@ export default function Hero() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
               id="download"
-              href="https://apps.apple.com/"
+              href={withBasePath("/#screenshots")}
               className="rounded-full bg-slate-950 px-6 py-4 text-center text-sm font-semibold text-white transition hover:bg-brand-600"
             >
-              View on the App Store
+              See screenshots
             </a>
             <a
               href={withBasePath("/support")}
@@ -58,44 +62,57 @@ export default function Hero() {
         </div>
 
         <div className="relative">
-          <div className="glass-panel rounded-[2rem] p-4 shadow-halo">
-            <div className="rounded-[1.6rem] bg-slate-950 p-4 text-white">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Today</p>
-                  <p className="mt-2 font-display text-2xl font-bold">Tuesday, 9 tasks</p>
-                </div>
-                <div className="rounded-2xl bg-white/10 px-4 py-2 text-sm font-medium text-slate-200">
-                  Focus score 92
-                </div>
-              </div>
+          <div className="relative mx-auto max-w-[34rem]">
+            <div className="hero-orb left-8 top-8 h-40 w-40 bg-brand-300/80" />
+            <div className="hero-orb bottom-12 right-8 h-48 w-48 bg-emerald-200/80" />
 
-              <div className="mt-6 space-y-3">
-                {[
-                  ["Prepare sprint review", "High priority"],
-                  ["Reply to investor email", "Suggested next"],
-                  ["Plan tomorrow", "AI grouped"]
-                ].map(([title, badge]) => (
-                  <div key={title} className="rounded-2xl bg-white/6 p-4">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <p className="font-medium">{title}</p>
-                        <p className="mt-1 text-sm text-slate-400">{badge}</p>
-                      </div>
-                      <span className="rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-semibold text-emerald-300">
-                        On track
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="relative flex items-end justify-center gap-4 px-2 pt-8">
+              <PhoneScreenshot
+                src={heroShots[1].src}
+                alt={heroShots[1].alt}
+                className="hidden w-28 -rotate-[10deg] translate-y-8 sm:block lg:w-36"
+              />
+              <PhoneScreenshot
+                src={heroShots[0].src}
+                alt={heroShots[0].alt}
+                priority
+                className="w-44 sm:w-56 lg:w-64"
+              />
+              <PhoneScreenshot
+                src={heroShots[2].src}
+                alt={heroShots[2].alt}
+                className="hidden w-28 rotate-[12deg] -translate-y-6 sm:block lg:w-36"
+              />
+            </div>
 
-              <div className="mt-6 rounded-2xl bg-brand-500/15 p-4">
-                <p className="text-xs uppercase tracking-[0.28em] text-brand-200">AI summary</p>
-                <p className="mt-2 text-sm leading-7 text-slate-200">
-                  You have two high-energy tasks this morning. Start with the sprint review, then
-                  batch short admin work after lunch.
-                </p>
+            <div className="glass-panel mt-6 rounded-[2rem] p-5">
+              <div className="grid gap-4 sm:grid-cols-3">
+                <div className="rounded-[1.5rem] bg-white/75 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-700">
+                    Native iPhone UI
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    The landing now shows the real product instead of placeholder mockups.
+                  </p>
+                </div>
+
+                <div className="rounded-[1.5rem] bg-slate-950 p-4 text-white">
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
+                    Real screens
+                  </p>
+                  <p className="mt-2 font-display text-3xl font-bold">6</p>
+                  <p className="mt-1 text-sm text-slate-300">optimized previews in the gallery</p>
+                </div>
+
+                <div className="rounded-[1.5rem] bg-brand-50 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-700">
+                    Fast landing
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    Screenshot assets were compressed for GitHub Pages without changing the source
+                    files you added.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

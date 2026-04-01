@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBasePath } from "../lib/paths";
+---
+
+<BaseLayout
+  title="Privacy Policy | TaskFlow Smart"
+  description="Alias route for the TaskFlow Smart privacy policy."
+  path="/PrivacyPolicy"
+>
+  <section class="flex min-h-[60vh] items-center py-16">
+    <div class="glass-panel mx-auto max-w-3xl rounded-[2.5rem] p-8 text-center sm:p-12">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">Privacy Policy</p>
+      <h1 class="section-title mt-4 text-4xl font-bold text-slate-950 sm:text-5xl">
+        Use the canonical privacy page
+      </h1>
+      <p class="mt-5 text-base leading-8 text-slate-600">
+        This alias route exists for compatibility. The current privacy policy is published at the
+        canonical path below.
+      </p>
+      <a
+        href={withBasePath("/privacy")}
+        class="mt-8 inline-flex rounded-full bg-slate-950 px-6 py-4 text-sm font-semibold text-white transition hover:bg-brand-600"
+      >
+        Open privacy policy
+      </a>
+    </div>
+  </section>
+</BaseLayout>

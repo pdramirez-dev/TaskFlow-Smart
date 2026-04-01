@@ -43,7 +43,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-16 sm:py-24">
+    <section id="features" className="scroll-mt-32 py-16 sm:py-24">
       <div className="mx-auto max-w-3xl text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">Why it works</p>
         <h2 className="section-title mt-4 text-4xl font-bold text-slate-950 sm:text-5xl">

@@ -3,7 +3,7 @@ import { withBasePath } from "../lib/paths";
 const footerLinks = [
   { href: withBasePath("/privacy"), label: "Privacy Policy" },
   { href: withBasePath("/support"), label: "Support" },
-  { href: "mailto:support@taskflowsmart.app", label: "Contact" }
+  { href: "mailto:pauldiaz.dev@icloud.com", label: "Contact" }
 ];
 
 export default function Footer() {

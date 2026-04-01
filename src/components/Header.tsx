@@ -2,7 +2,7 @@ import { withBasePath } from "../lib/paths";
 
 const navItems = [
   { href: withBasePath("/#features"), label: "Features" },
-  { href: withBasePath("/#screenshots"), label: "Preview" },
+  { href: withBasePath("/#screenshots"), label: "Screens" },
   { href: withBasePath("/support"), label: "Support" },
   { href: withBasePath("/privacy"), label: "Privacy" }
 ];
@@ -32,10 +32,10 @@ export default function Header() {
         </nav>
 
         <a
-          href="https://apps.apple.com/"
+          href={withBasePath("/#screenshots")}
           className="rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-600"
         >
-          App Store
+          See app
         </a>
       </div>
     </header>

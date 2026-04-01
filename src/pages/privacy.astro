@@ -1,62 +1,98 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const policySections = [
+  {
+    title: "Information we collect",
+    body:
+      "TaskFlow Smart may collect contact details you send during support requests, limited diagnostic information needed to improve reliability and analytics that describe usage at a high level."
+  },
+  {
+    title: "How we use information",
+    body:
+      "Information is used to operate the app, respond to support messages, improve performance, investigate bugs and understand broad product usage patterns."
+  },
+  {
+    title: "Data sharing",
+    body:
+      "We do not sell personal information. Data may be shared with service providers only when needed to host services, support app functionality or comply with legal obligations."
+  },
+  {
+    title: "Retention",
+    body:
+      "Information is retained only for as long as needed to provide the service, resolve support issues, meet legal obligations and maintain security."
+  },
+  {
+    title: "Your choices",
+    body:
+      "You can request access, correction or deletion of personal information, subject to applicable law and any legitimate security or record-keeping requirements."
+  }
+];
 ---
 
 <BaseLayout
   title="Privacy Policy | TaskFlow Smart"
-  description="Privacy policy for TaskFlow Smart."
+  description="Privacy policy for TaskFlow Smart, including data handling, retention and contact information."
   path="/privacy"
 >
   <section class="py-14 sm:py-20">
-    <div class="glass-panel mx-auto max-w-4xl rounded-[2.5rem] p-8 sm:p-12">
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">Privacy Policy</p>
-      <h1 class="section-title mt-4 text-4xl font-bold text-slate-950 sm:text-5xl">TaskFlow Smart</h1>
-      <p class="mt-4 text-sm text-slate-500">Effective date: April 1, 2026</p>
-
-      <div class="mt-10 space-y-8 text-base leading-8 text-slate-600">
-        <section>
-          <h2 class="font-display text-2xl font-bold text-slate-950">Information we collect</h2>
-          <p class="mt-3">
-            TaskFlow Smart may collect basic contact information you provide when you request
-            support, along with anonymized diagnostic data needed to maintain app quality and
-            performance.
+    <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+      <aside class="space-y-6">
+        <div class="glass-panel rounded-[2.5rem] p-8 sm:p-10 lg:sticky lg:top-28">
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">Privacy policy</p>
+          <h1 class="section-title mt-4 text-4xl font-bold text-slate-950 sm:text-5xl">
+            TaskFlow Smart
+          </h1>
+          <p class="mt-4 text-sm text-slate-500">Effective date: April 1, 2026</p>
+          <p class="mt-6 text-base leading-8 text-slate-600">
+            This page exists as the public privacy policy URL for the app and summarizes how
+            support, diagnostic and usage information may be handled.
           </p>
-        </section>
 
-        <section>
-          <h2 class="font-display text-2xl font-bold text-slate-950">How we use information</h2>
-          <p class="mt-3">
-            Information is used to operate the app, respond to support inquiries, improve product
-            stability and understand high-level usage patterns.
-          </p>
-        </section>
+          <div class="mt-8 rounded-[1.75rem] bg-slate-950 p-6 text-white">
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Privacy contact</p>
+            <p class="mt-3 font-display text-2xl font-bold">privacy@taskflowsmart.app</p>
+            <p class="mt-3 text-sm leading-7 text-slate-300">
+              Use this address for privacy-specific requests, data access questions or deletion
+              requests.
+            </p>
+            <a
+              class="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-brand-100"
+              href="mailto:privacy@taskflowsmart.app?subject=TaskFlow%20Smart%20Privacy"
+            >
+              Contact privacy team
+            </a>
+          </div>
+        </div>
+      </aside>
 
-        <section>
-          <h2 class="font-display text-2xl font-bold text-slate-950">Data sharing</h2>
-          <p class="mt-3">
-            We do not sell personal information. Data is only shared with service providers when
-            necessary to host infrastructure, deliver app functionality or comply with legal
-            obligations.
-          </p>
-        </section>
+      <div class="glass-panel rounded-[2.5rem] p-8 sm:p-12">
+        <div class="space-y-8 text-base leading-8 text-slate-600">
+          {
+            policySections.map((section) => (
+              <section class="rounded-[1.8rem] border border-slate-200 bg-white/70 p-6 sm:p-7">
+                <h2 class="font-display text-2xl font-bold text-slate-950">{section.title}</h2>
+                <p class="mt-3">{section.body}</p>
+              </section>
+            ))
+          }
 
-        <section>
-          <h2 class="font-display text-2xl font-bold text-slate-950">Your choices</h2>
-          <p class="mt-3">
-            You can contact us to request access, correction or deletion of your personal data,
-            subject to applicable law.
-          </p>
-        </section>
+          <section class="rounded-[1.8rem] border border-slate-200 bg-brand-50 p-6 sm:p-7">
+            <h2 class="font-display text-2xl font-bold text-slate-950">Children's privacy</h2>
+            <p class="mt-3">
+              The app is not intended to knowingly collect personal information from children
+              without appropriate consent where required by law.
+            </p>
+          </section>
 
-        <section>
-          <h2 class="font-display text-2xl font-bold text-slate-950">Contact</h2>
-          <p class="mt-3">
-            For privacy questions, email
-            <a class="font-semibold text-brand-700" href="mailto:privacy@taskflowsmart.app">
-              {" "}privacy@taskflowsmart.app
-            </a>.
-          </p>
-        </section>
+          <section class="rounded-[1.8rem] border border-slate-200 bg-white/70 p-6 sm:p-7">
+            <h2 class="font-display text-2xl font-bold text-slate-950">Policy updates</h2>
+            <p class="mt-3">
+              This policy may be updated from time to time. When material changes are made, the
+              effective date on this page will be updated accordingly.
+            </p>
+          </section>
+        </div>
       </div>
     </div>
   </section>
