@@ -29,11 +29,14 @@ const canonical = new URL(withBasePath(path), Astro.site);
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonical.toString()} />
     <link rel="icon" type="image/svg+xml" href={withBasePath("/favicon.svg")} />
+    <link rel="apple-touch-icon" href={withBasePath("/icon.png")} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical.toString()} />
+    <meta property="og:image" content={new URL(withBasePath("/icon.png"), Astro.site).toString()} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={new URL(withBasePath("/icon.png"), Astro.site).toString()} />
   </head>
   <body class="min-h-screen antialiased">
     <div class="mx-auto flex min-h-screen w-full max-w-[100rem] flex-col px-3 sm:px-4 lg:px-5 xl:px-6">

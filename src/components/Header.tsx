@@ -12,9 +12,13 @@ export default function Header() {
     <header className="sticky top-0 z-20 py-4">
       <div className="glass-panel flex items-center justify-between rounded-full px-5 py-3">
         <a href={withBasePath("/")} className="flex items-center gap-3">
-          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-500 text-lg font-bold text-white shadow-halo">
-            TF
-          </span>
+          <img
+            src={withBasePath("/icon.png")}
+            alt="TaskFlow Smart app icon"
+            width={44}
+            height={44}
+            className="h-11 w-11 rounded-2xl shadow-halo ring-1 ring-black/5"
+          />
           <div>
             <div className="font-display text-sm font-bold tracking-tight text-slate-950">
               TaskFlow Smart

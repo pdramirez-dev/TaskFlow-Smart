@@ -19,31 +19,29 @@ export default function Screenshots() {
             Product preview
           </p>
           <h2 className="section-title mt-4 text-4xl font-bold text-slate-950 sm:text-5xl">
-            Real iPhone screenshots, integrated into the landing
+            Real app screens, presented as product storytelling
           </h2>
           <p className="mt-5 max-w-xl text-base leading-8 text-slate-600">
-            The previous placeholder cards were replaced with optimized assets from
-            `public/screenshots`. The section is built to feel closer to an App Store editorial
-            layout while keeping the page lightweight.
+            Instead of wrapping every screen in fake hardware, the gallery now treats the app as
+            the product itself: clear surfaces, strong hierarchy and direct visibility into each
+            flow.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="glass-panel rounded-[1.75rem] p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-700">
-                Anchor links
+                Direct product view
               </p>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                Landing CTAs now point to valid internal sections instead of placeholder external
-                URLs.
+                The screenshots read cleanly without competing against decorative device frames.
               </p>
             </div>
             <div className="glass-panel rounded-[1.75rem] p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-700">
-                Optimized images
+                Lighter visual system
               </p>
               <p className="mt-2 text-sm leading-7 text-slate-600">
-                Gallery assets were resized to keep the screenshots sharp without shipping the full
-                simulator PNG weight.
+                The new treatment is calmer, sharper and more aligned with a modern product page.
               </p>
             </div>
           </div>
@@ -52,22 +50,27 @@ export default function Screenshots() {
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {screenshots.map((preview, index) => (
             <article key={preview.src} className="glass-panel overflow-hidden rounded-[2rem] p-4">
-              <div className={`rounded-[1.9rem] bg-gradient-to-b ${accents[index % accents.length]} p-3`}>
+              <div
+                className={`rounded-[1.9rem] bg-gradient-to-b ${accents[index % accents.length]} px-4 pb-4 pt-6`}
+              >
                 <PhoneScreenshot
                   src={preview.src}
                   alt={preview.alt}
                   priority={index < 2}
-                  className="w-full"
+                  badge={preview.label}
+                  className="mx-auto w-full max-w-[15rem]"
                 />
               </div>
-              <div className="mt-4 flex items-center justify-between gap-4">
+              <div className="mt-4">
                 <div>
-                  <h3 className="font-display text-xl font-bold text-slate-950">{preview.label}</h3>
-                  <p className="mt-1 text-sm text-slate-500">TaskFlow Smart on iPhone</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-700">
+                    {preview.label}
+                  </p>
+                  <h3 className="mt-2 font-display text-xl font-bold text-slate-950">
+                    {preview.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">{preview.description}</p>
                 </div>
-                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
-                  Preview
-                </span>
               </div>
             </article>
           ))}

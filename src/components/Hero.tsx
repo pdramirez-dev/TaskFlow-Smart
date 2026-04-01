@@ -18,9 +18,21 @@ export default function Hero() {
 
       <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="relative rounded-[2.25rem] px-2 py-4 sm:px-4 lg:px-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-sm font-medium text-brand-800">
-            <span className="h-2 w-2 rounded-full bg-brand-500" />
-            Organize your day with AI
+          <div className="flex items-center gap-4">
+            <img
+              src={withBasePath("/icon.png")}
+              alt="TaskFlow Smart app icon"
+              width={72}
+              height={72}
+              className="h-14 w-14 rounded-[1.25rem] shadow-[0_20px_45px_-25px_rgba(47,117,255,0.65)] ring-1 ring-black/5 sm:h-[4.5rem] sm:w-[4.5rem]"
+            />
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-sm font-medium text-brand-800">
+                <span className="h-2 w-2 rounded-full bg-brand-500" />
+                Organize your day with AI
+              </div>
+              <p className="text-sm font-medium text-slate-500">Built for iPhone</p>
+            </div>
           </div>
 
           <h1 className="section-title mt-8 max-w-3xl text-5xl font-extrabold leading-[0.95] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
@@ -62,55 +74,62 @@ export default function Hero() {
         </div>
 
         <div className="relative">
-          <div className="relative mx-auto max-w-[34rem]">
+          <div className="relative mx-auto max-w-[42rem] px-2 pb-4 pt-6">
             <div className="hero-orb left-8 top-8 h-40 w-40 bg-brand-300/80" />
             <div className="hero-orb bottom-12 right-8 h-48 w-48 bg-emerald-200/80" />
+            <div className="absolute inset-x-8 top-10 bottom-10 rounded-[2.75rem] bg-white/40 blur-3xl" />
+            <div className="absolute inset-x-12 bottom-8 h-20 rounded-full bg-slate-950/10 blur-3xl" />
 
-            <div className="relative flex items-end justify-center gap-4 px-2 pt-8">
-              <PhoneScreenshot
-                src={heroShots[1].src}
-                alt={heroShots[1].alt}
-                className="hidden w-28 -rotate-[10deg] translate-y-8 sm:block lg:w-36"
-              />
+            <div className="relative px-2 pt-8">
+              <div className="mx-auto grid max-w-[38rem] grid-cols-1 items-end gap-4 md:grid-cols-[0.82fr_1fr_0.82fr] md:gap-5">
               <PhoneScreenshot
                 src={heroShots[0].src}
                 alt={heroShots[0].alt}
-                priority
-                className="w-44 sm:w-56 lg:w-64"
+                badge={heroShots[0].label}
+                className="mx-auto hidden w-full md:block md:translate-y-8"
               />
               <PhoneScreenshot
                 src={heroShots[2].src}
                 alt={heroShots[2].alt}
-                className="hidden w-28 rotate-[12deg] -translate-y-6 sm:block lg:w-36"
+                priority
+                badge={heroShots[2].label}
+                className="relative z-20 mx-auto w-full max-w-[18rem] md:max-w-none"
               />
+              <PhoneScreenshot
+                src={heroShots[1].src}
+                alt={heroShots[1].alt}
+                badge={heroShots[1].label}
+                className="mx-auto hidden w-full md:block md:-translate-y-3"
+              />
+              </div>
             </div>
 
             <div className="glass-panel mt-6 rounded-[2rem] p-5">
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="rounded-[1.5rem] bg-white/75 p-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-700">
-                    Native iPhone UI
+                    Capture fast
                   </p>
                   <p className="mt-2 text-sm leading-7 text-slate-600">
-                    The landing now shows the real product instead of placeholder mockups.
+                    Build tasks quickly with details, organization and priority in one place.
                   </p>
                 </div>
 
                 <div className="rounded-[1.5rem] bg-slate-950 p-4 text-white">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
-                    Real screens
+                    Plan visually
                   </p>
-                  <p className="mt-2 font-display text-3xl font-bold">6</p>
-                  <p className="mt-1 text-sm text-slate-300">optimized previews in the gallery</p>
+                  <p className="mt-2 font-display text-3xl font-bold">3 core flows</p>
+                  <p className="mt-1 text-sm text-slate-300">capture, planning and daily calendar</p>
                 </div>
 
                 <div className="rounded-[1.5rem] bg-brand-50 p-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-700">
-                    Fast landing
+                    Real product
                   </p>
                   <p className="mt-2 text-sm leading-7 text-slate-600">
-                    Screenshot assets were compressed for GitHub Pages without changing the source
-                    files you added.
+                    The visual direction now presents the app as software, not as forced hardware
+                    mockups.
                   </p>
                 </div>
               </div>
