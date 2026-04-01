@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBasePath } from "../lib/paths";
+---
+
+<BaseLayout
+  title="Page Not Found | TaskFlow Smart"
+  description="The requested page could not be found."
+  path="/404"
+>
+  <section class="flex min-h-[60vh] items-center py-16">
+    <div class="glass-panel mx-auto max-w-3xl rounded-[2.5rem] p-8 text-center sm:p-12">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">404</p>
+      <h1 class="section-title mt-4 text-4xl font-bold text-slate-950 sm:text-5xl">
+        This page is no longer in your task flow
+      </h1>
+      <p class="mt-5 text-base leading-8 text-slate-600">
+        The route you tried to open does not exist. Head back to the main page to continue.
+      </p>
+      <a
+        href={withBasePath("/")}
+        class="mt-8 inline-flex rounded-full bg-slate-950 px-6 py-4 text-sm font-semibold text-white transition hover:bg-brand-600"
+      >
+        Return home
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBasePath } from "../lib/paths";
+---
+
+<BaseLayout
+  title="Support | TaskFlow Smart"
+  description="Support page for TaskFlow Smart."
+  path="/support"
+>
+  <section class="py-14 sm:py-20">
+    <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+      <div class="glass-panel rounded-[2.5rem] p-8 sm:p-12">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">Support</p>
+        <h1 class="section-title mt-4 text-4xl font-bold text-slate-950 sm:text-5xl">
+          Need help with TaskFlow Smart?
+        </h1>
+        <p class="mt-5 max-w-2xl text-base leading-8 text-slate-600">
+          Use the contact details below for bug reports, account questions, billing issues or
+          general product feedback.
+        </p>
+
+        <div class="mt-10 space-y-6 text-base leading-8 text-slate-600">
+          <div>
+            <h2 class="font-display text-2xl font-bold text-slate-950">Contact</h2>
+            <p class="mt-3">
+              Email:
+              <a class="font-semibold text-brand-700" href="mailto:support@taskflowsmart.app">
+                {" "}support@taskflowsmart.app
+              </a>
+            </p>
+          </div>
+
+          <div>
+            <h2 class="font-display text-2xl font-bold text-slate-950">Response time</h2>
+            <p class="mt-3">We aim to respond to support requests within 2 business days.</p>
+          </div>
+
+          <div>
+            <h2 class="font-display text-2xl font-bold text-slate-950">Include in your request</h2>
+            <p class="mt-3">
+              Please include your device model, iOS version, a short description of the issue and
+              reproduction steps when relevant.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="glass-panel rounded-[2.5rem] p-8 sm:p-10">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">Quick links</p>
+        <div class="mt-6 space-y-4">
+          <a class="block rounded-2xl border border-slate-200 bg-white/80 p-5 transition hover:border-brand-300" href={withBasePath("/")}>
+            <span class="block font-display text-xl font-bold text-slate-950">Marketing page</span>
+            <span class="mt-2 block text-sm leading-7 text-slate-600">
+              Review the landing page and product overview.
+            </span>
+          </a>
+          <a class="block rounded-2xl border border-slate-200 bg-white/80 p-5 transition hover:border-brand-300" href={withBasePath("/privacy")}>
+            <span class="block font-display text-xl font-bold text-slate-950">Privacy policy</span>
+            <span class="mt-2 block text-sm leading-7 text-slate-600">
+              Read how TaskFlow Smart handles privacy-related information.
+            </span>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
